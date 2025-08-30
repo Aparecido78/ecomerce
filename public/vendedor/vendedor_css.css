@@ -1,0 +1,386 @@
+.div_login_vendedor{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+}
+form{
+    
+    width: 40%;
+    
+   
+    margin-left: 30%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin-top: 5%;
+    
+   
+
+}
+ label, input{
+ border-radius: 10px;
+    width: 50%;
+    font-size: 20px; 
+    position: relative;
+    margin: 20px auto;
+    
+   
+    top: 60px;
+    
+}
+
+button{
+    background: rgb(10, 10, 247);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 20%;
+    font-size: 20px;
+    position: relative;
+    top: 30%;
+    right: 35%;
+}
+
+.email{
+    position: relative;
+    margin-right: 20px;
+    
+}
+
+.emp{
+    position: relative;
+    border-radius: 10px;
+    
+}
+
+
+.tela_produto{
+    overflow-y: auto;
+    border-radius: 10px;
+    display: flex;
+    width: 100%;
+    height: 200vh;
+    background: white;
+    color: white;
+    flex-wrap: wrap;
+}
+.black_cli{
+    display: flex;
+}
+.black_cli .nome_black{
+    margin-left: 10%;
+}
+.nome_black{
+    border-radius: 15px;
+    text-align: center;
+    width: 15%;
+    color: black;
+    height: 70px;
+    font-size: 30px;
+    background-image: linear-gradient(170deg, black, white,black );
+    animation: anim ease 2s infinite;
+    background-size: 200% 200%;
+}
+@keyframes anim{
+    0%{
+     background-position: 0%  100%;
+    }
+    50%{
+        background-position: 0% 10%;
+    }
+    100%{
+        background-position: 0% 100%;
+    }
+}
+
+.produtos{
+
+    width: 20%;
+    border-radius: 10px;
+    height: 320px;
+    text-align: center;
+    display: block;
+    color: black;
+    margin: 10px;
+    background: rgb(255, 252, 252);
+     box-shadow: 0 0 10px white;
+     border: solid 2px;
+     box-shadow: 0 0 5px black;
+     margin-left: 10%;
+   
+}
+.produtos .img{
+    position: relative;
+    top: 510px;
+}
+
+ img{
+    width: 50%;
+   
+   
+}
+
+.but{
+    position: absolute;
+
+    background: blue;
+    color: white;
+    width: 10%;
+    margin-top: 120px;
+    border: solid white;
+  
+   
+}
+
+
+.carrinho_butao{
+    position: relative;
+ 
+    background: rgb(104, 151, 33);
+    color: white;
+    border: white;
+    width: 118%;
+    font-size: 15px;
+    top: -20px;
+    margin-left: 31px;
+ 
+    height: 50px;
+}
+.carrinho_butao:hover{
+     background: rgb(55, 77, 22);
+
+}
+.carrinho_butao:hover{
+    box-shadow: 0 0 20px white;
+}
+
+
+
+
+
+.link_butao{
+    text-decoration: none;
+    bottom:  10px;
+    border-radius: 20px;
+    padding: 5px;
+    background: greenyellow;
+    border: solid 2px black;
+    box-shadow: 0 0 5px black;
+    align-items: center;
+   
+   
+    text-align: center;
+    
+  
+   
+}
+.h1_nom_pro{
+     border: 0;
+     color: black;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     text-align: center;
+     position: relative;
+     color: rgb(11, 79, 135);
+     right: 70px;
+     font-size: 50px;
+     bottom: 50%;
+}
+
+
+.nav_div{
+    
+    width: 30%;
+  
+    margin: 4px;
+   
+    height: 60px;
+   
+
+}
+.nav_div  .link_butao{
+    display: flex;
+    position: relative;
+    color: white;
+
+    margin-left:65%;
+    margin: 10px;
+}
+
+.nav_div  .link_butao:hover{
+    box-shadow: 0 0 15px black;
+}
+
+
+.ordem_link{
+    width: 100%;
+  
+    display: flex;
+    margin-top: -20%;
+    margin-left: 200%;
+}
+.nav_div  .vendedor_a{
+    display: inline-block;
+    position: relative;
+    margin-left: 10%;
+    top: 35%;
+    font-size: 20px;
+     
+}
+.menu_links_ a{
+    color: white;
+    margin-left: 90px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0 0 30px white;
+}
+
+.meio_links{
+
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(to right ,  black) ;
+   
+    background-size: 200% 200%;
+    animation: anim ease 2s infinite;
+}
+
+@keyframes anim{
+    0%{
+     background-position: 0%  100%;
+    }
+    50%{
+        background-position: 0% 50%;
+    }
+    100%{
+        background-position: 0% 100%;
+    }
+}
+
+
+.menu_links_{
+    position: static;
+    top: 10;
+    margin-left: 10px;
+}
+
+.nav_menus{
+    display: block;
+    width: 100%;
+    height: 50px;
+   
+}
+
+#produto_do_vendedor{
+   
+    display: none;
+   
+    border-radius: 10px;
+    overflow: auto;
+   
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg   ,white  );
+
+
+}
+
+#produto_do_vendedor img{
+    
+    width: 50%;
+    height:85px;
+    
+}
+
+.produto_vende_meus {
+    margin-left: 30%;
+    display: flex;
+    overflow-y: scroll;      
+    display: block;
+    width: 20%;
+    text-align: center;
+    align-items: center;
+    margin: 10px;
+    height: 300px;
+    border: solid 2px black;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    
+    border: solid 2px black;
+   
+    
+}
+
+.produto_nomes{
+     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.produto_vende_meus::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+#meus_pro{
+    position: absolute;
+    top: -2%;
+    width: 30%;
+    display: none;
+    right: 40%;
+
+}
+ 
+
+.div_link_butao .link_butao{
+    background: black;
+    color: white;
+    border: solid 4px greenyellow;
+
+}
+
+
+
+.form_editar{
+    width: 10%;
+    position: relative;
+    border: none;
+    right: 27%;
+
+  
+    height: 30px;
+
+}
+
+.form_butao{
+    width: 250%;
+    position: absolute;
+    background: greenyellow;
+    
+    left: 100px;
+    z-index: 999;
+   
+}
+
+.contatos{
+    display: flex;
+    margin-left: 43%;
+   
+}
+.contatos a img{
+     font-size: 30px;
+
+}
+.afoto{
+    font-size: 30px;
+    color: white;
+}
+
+
+
+
+
+
+
+
+

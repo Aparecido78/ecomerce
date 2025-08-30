@@ -1,0 +1,74 @@
+.menu{
+     background: linear-gradient(180deg , black, rgb(163, 158, 158));
+    z-index: 999;
+    width: 5%;
+    height: 60px;
+    position: fixed;
+    right: 35px;
+    align-items: end;
+    text-align: right;
+    bottom: 77%;
+    border-radius: 80px;
+    color: white;
+    font-size: 10px;
+}
+.menu h1{
+    margin-right:15px;
+}
+
+.menu_2{
+    
+    display: flex;
+    flex-direction: column;
+   
+    background: linear-gradient(180deg , black, rgb(163, 158, 158));
+    z-index: 999;
+    height: 600px;
+    position: fixed;
+    right: 10px;
+  
+   
+    bottom: 77%;
+  
+    color: white;
+    font-size: 10px;
+    width: 30%;
+    top: 10%;
+    border: solid 2px white;
+  
+
+}
+.menu_2 .div_a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+   
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    margin-left: 30%;
+    padding: 20px;
+
+
+
+}
+.div_a a{
+    margin:20px ;
+}
+.div_a a:hover{
+    color: black;
+    
+
+   text-shadow: 0 0 30px white;
+    
+}
+#div_a{
+    display: none;
+}
+#sair_butao{
+    color: red;
+    font-size: 23px;
+    display: none;
+  
+   z-index: 999;
+}
+

@@ -1,0 +1,109 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+
+    width: 50%;
+    height: 400px;
+    background: linear-gradient(100deg , black, white);
+}
+
+form{
+    display: block;
+    width: 60%;
+    height: 400px;
+    border: solid 2px black;
+    margin-left: 70%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 0 20px black;
+    margin-top: 15%;
+}    
+label{
+     position: relative;
+    top: 50%;
+   
+
+}
+input{
+    position: relative;
+     top: 50%;
+}
+
+button{
+    position: relative;
+    top: 20%;
+    right: 1%;
+    width: 20%;
+    height: 25px;
+    border-radius: 20px;
+    color: white;
+    background: rgb(10, 49, 147);
+
+}
+button:hover{
+    width: 22%;
+    height: 27;
+    box-shadow: 0 0 10px white;
+
+}
+.email{
+    position: relative;
+    top: 5%;
+    font-size: 20px;
+   
+}
+.senha{
+    bottom: 20%;
+    font-size: 20px;
+    top: 10%;
+    position: relative;
+     right:0%;
+    
+
+}
+.senha input{
+    border-radius: 12px;
+     font-size: 20px;
+}
+.email input{
+     border-radius: 12px;
+    font-size: 20px;
+}
+
+.login_cli{
+    height: 50px;
+    font-size: 40px;
+    color: white;
+  text-shadow: 0 0 30px black;
+  
+  width: 100%;
+}
+
+.link_a{
+    margin-left: 85%;
+    bottom: 20%;
+    position: relative;
+    width: 100%;
+}
+.a{
+    color: blue;
+    text-decoration: none;
+}
+
+.nav{
+    width: 200%;
+    height: 30px;
+    background: white;
+     box-shadow: 0 0 15px black;
+
+}
+
+
+ 

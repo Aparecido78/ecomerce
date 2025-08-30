@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f0f2f5;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.perfil_form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.perfil_form label {
+    font-weight: bold;
+    color: #444;
+}
+
+.perfil_form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    transition: border 0.3s, box-shadow 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.perfil_form input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+.butao_salvar {
+    margin-top: 15px;
+    padding: 12px;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.butao_salvar:hover {
+    background: #388E3C;
+}
+
+.butao_voltar {
+    margin-bottom: 15px;
+    padding: 12px;
+    background: #ccc;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.butao_voltar:hover {
+    background: #999;
+}
+
+.nome_black{
+    border-radius: 15px;
+    text-align: center;
+    width: 15%;
+    color: black;
+    height: 70px;
+    font-size: 30px;
+    background-image: linear-gradient(170deg, black, white,black );
+    animation: anim ease 2s infinite;
+    background-size: 200% 200%;
+    margin-left: 44%;
+}
+@keyframes anim{
+    0%{
+     background-position: 0%  100%;
+    }
+    50%{
+        background-position: 0% 10%;
+    }
+    100%{
+        background-position: 0% 100%;
+    }
+}

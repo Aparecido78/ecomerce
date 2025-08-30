@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../vendedor/vendedor_css.css">
+    <link rel="stylesheet" href="../usuario/produtos_cliente.css">
+    <link rel="stylesheet" href="../usuario/carrinho.css">
+   
+    
+    
+    <title>Document</title>
+</head>
+<body>
+    <nav class="nav_menus">
+        <div class="black_cli">
+        <div class="nav_div">
+            <a class="vendedor_a"> Cliente:<%= usuario.nome %>  <br> Saldo:<%= usuario.dinheiro %></a>
+           
+
+        </div>
+        <div class="nome_black">
+            black<br>Friday
+        </div>
+       
+        </div>
+        
+        <div class="nav_div"> 
+           
+        </div>
+        </div> 
+        <div class="menu_links_">
+            <div class="meio_links">
+            <a  id="produtos_butao">Produtos</a>
+            <a style="text-decoration: none;" href="/pagina/editar/usuario">Perfil</a>
+            <a id="butao_historico">Historico</a>
+            <a id="carrinho_butao">Carrinho</a>
+            </div>
+            
+        </div>
+        <br>
+        <div class="nav_div">
+             <h1 id="h1_nom_pro" class="h1_nom_pro"> Produtos  </h1>
+
+        </div>
+
+    
+   </nav>
+   
+<br><br><br><br><br>
+   <br><br><br><br><br>
+   <br><br>
+   <% if (mensagem) { %>
+    <p style="color: green; margin-left:40%; font-size:30px;"><%= mensagem %></p>
+    
+<% } %>
+  
+  
+    <div id="tela_produto" class="tela_produto">
+                
+            <%  produtos.forEach(pro=>{ %>
+                
+                <div id="produtos" class="produtos">
+                    <br>
+                
+                    <img style="height: 100px;" width="30%" src="/image/<%= pro.foto  %>">
+                    <p>Nome: <%= pro.nome %> </p>
+                    <p>R$: <%= pro.preco %> </p>
+                    <p class="sem_juros">10x sem juros</p>
+                    <p class="frete">frete gratis</p>
+                  
+                    <form action="/adicionar/carrinho/<%= pro.id %>" method="post">
+                       
+                        <button type="submit" class="carrinho_butao">adicionar carrinho</button>
+
+                    </form>
+               
+                </div>
+             
+             
+            <% })  %>
+       
+    </div>
+     <h1 id="nome_carrinho">Carrinho de Produtos</h1>
+    <div class="carrinho" id="carrinho_cliente">
+         
+        <% carrinho.forEach(car=>{ %>
+             
+
+                <div class="produtos">
+                    <br>
+                    
+                 <img style="height: 100px;" width="30%" src="/image/<%= car.Produto.foto  %>">
+                    <p>Nome: <%= car.Produto.nome %> </p>
+                    <p>R$: <%= car.Produto.preco %> </p>
+                    <br>
+                    <form action="/remover/carrinho/<%=  car.id %>" method="post">
+
+                        <button class="butao_cancelar_produto" type="submit">Remover Produto</button>
+                    </form>
+                    <form action="/comprar/produto/<%=  car.id %>" method="post">
+                        <input type="hidden" name="id" value= "<%= car.Produto.id %>">
+                        <button class="butao_comprar_produto" type="submit">Finalizar Compra</button>
+
+                    </form>
+                </div>
+
+
+        <% }) %>
+
+        
+    </div>
+    <div id="historico">
+        <div class="nome_historico">
+        <h1>Historico</h1>
+        </div>
+        
+        <div class="produto_historico_div">
+            <% if(historico) { %>
+        <% historico.forEach(hit=>{  %>
+             <div class="produtos_historico">
+                <br>
+                 <img style="height: 100px;" width="30%" src="/image/<%= hit.Produto.foto  %>">
+                    <p>Nome: <%= hit.Produto.nome %> </p>
+                    <p>descricao: <br> <%= hit.Produto.descricao %> </p>
+                    <br>
+                   
+            </div>
+
+        
+            
+           
+        <% })  %>
+
+        <% } else { %>
+
+            <p> historico vasio</p>
+
+        <% } %>
+        </div>
+        
+
+
+
+
+
+<br><br><br><br><br><br><br><br>
+   <br><br>
+    </div>
+   
+
+    <br><br>
+    
+
+     <footer class="footer_contatos" style="text-align:center;  background:#222; color:white;">
+        <br><br><br><br><br><br><br><br>
+   <br><br>
+  <p>Siga-nos:</p>
+  
+ 
+   <div class="contatos">
+  <a href="https://facebook.com" target="_blank">
+    <img class="afoto" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" 
+         alt="Facebook" style="color: white;" width="70" height="70">
+  </a>
+
+ 
+  <a href="https://instagram.com" target="_blank">
+    <img class="afoto" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" 
+         alt="Instagram" style="color: white;" width="70" height="70">
+  </a>
+
+  
+  <a href="https://twitter.com" target="_blank">
+    <img class="afoto" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" 
+         alt="Twitter" style="color: white;" width="70" height="70">
+  </a>
+  </div>
+</footer>
+
+
+
+
+
+
+    <script>
+
+            var produtos_butao = document.getElementById("produtos_butao")
+            var carrinho_butao = document.getElementById("carrinho_butao")
+
+            var tela_produto = document.getElementById("tela_produto")
+            var carrinho_cliente = document.getElementById("carrinho_cliente")
+            var nome_carrinho = document.getElementById("nome_carrinho")
+
+            produtos_butao.addEventListener("click",()=>{
+                tela_produto.style.display = "flex"
+                carrinho_cliente.style.display = "none"
+                nome_carrinho.style.display = "none"
+                historico.style.display = "none"
+                
+
+            })
+
+            carrinho_butao.addEventListener("click",()=>{
+                carrinho_cliente.style.display = "flex"
+                nome_carrinho.style.display = "block"
+                tela_produto.style.display = "none"
+                historico.style.display = "none"
+               
+
+            })
+
+            var butao_historico = document.getElementById("butao_historico")
+            var historico = document.getElementById("historico")
+
+            butao_historico.addEventListener("click",()=>{
+             
+                carrinho_cliente.style.display = "none"
+                nome_carrinho.style.display = "none"
+                tela_produto.style.display = "none"
+                historico.style.display = "block"
+                
+            })
+           
+
+
+    </script>
+
+    
+    
+    
+</body>
+</html>

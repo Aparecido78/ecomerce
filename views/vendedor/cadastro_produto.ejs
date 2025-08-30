@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        a {
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            border: 1px solid #000;
+            padding: 20px 30px;
+            border-radius: 8px;
+            width: 300px;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #000;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #fff;
+            color: #000;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #000;
+            background-color: #000;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="javascript:history.back()">← Voltar</a>
+
+    <h1>Cadastro de Produtos</h1>
+     <% if (mensagem) { %>
+    <p style="color: green; margin-left:60%; font-size:30px;"><%= mensagem %></p>
+    
+<% } %>
+
+    <form action="/cadastrar/produtos" method="post" enctype="multipart/form-data">
+        <label>Nome do Produto</label>
+        <input type="text" name="nome" placeholder="Digite o nome do produto">
+
+        <label>Preço</label>
+        <input type="number" name="preco" placeholder="Digite o preço">
+
+        <label>Descrição</label>
+        <textarea name="descricao" placeholder="Digite a descrição do produto"></textarea>
+
+        <label>Quantidade</label>
+        <input type="number" name="quantidade" placeholder="Digite a quantidade">
+
+        <label>Foto</label>
+        <input type="file" name="foto">
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>

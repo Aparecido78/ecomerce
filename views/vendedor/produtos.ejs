@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../vendedor/vendedor_css.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="nav_menus"> 
+        <div class="nav_div">
+            <a class="vendedor_a"> vendedor: <%= vendedor.nome %> </a>
+           
+
+        </div>
+        <div class="nav_div">
+             <h1 id="h1_nom_pro" class="h1_nom_pro"> Produtos  </h1>
+
+        </div>
+        <div class="nav_div"> 
+            <div class="ordem_link">
+            <a class="link_butao" id="butao_meus_produtos">Meus Produtos</a>
+            <a class="link_butao" id="butao_tela_produtos"> Tela de produtos</a>
+            <div class="div_link_butao">
+                 <a class="link_butao" href="/pagina/cadastrar/produtos">Cadastrar produtos</a>
+            </div>
+           
+            </div>            
+        </div>
+    
+   </nav>
+
+   
+    <br><br><br><br><br><br>
+     <% if (mensagem) { %>
+    <p style="color: green; margin-left:40%; font-size:30px;"><%= mensagem %></p>
+    
+<% } %>
+    <div id="tela_produto" class="tela_produto">
+                
+            <%  produtos.forEach(pro=>{ %>
+                <div id="produtos" class="produtos">
+                    <br>
+                
+                    <img style="height: 100px;" width="30%" src="/image/<%= pro.foto  %>">
+                    <p>Nome: <%= pro.nome %> </p>
+                    <p>Preço: <%= pro.preco %> </p>
+                    <p class="frete">frete gratis</p>
+                    <br>
+                   
+                </div>
+                
+             
+            <% })  %>
+       
+    </div>
+    
+            <h1  id="meus_pro" style=" font-size: 50px; margin-left:40%;">Meus Produtos</h1>
+    
+    <div id="produto_do_vendedor">
+        
+      <% if (prod_vendedor) { %>
+    <% prod_vendedor.forEach(pro_ve => { %>
+        <div class="produto_vende_meus">
+            <img src="/image/<%= pro_ve.foto %>"> 
+            <p><a class="produto_nomes">Nome: </a><%= pro_ve.nome %></p>
+            <p><a class="produto_nomes">Preco:</a> <%= pro_ve.preco %></p>
+            <p><a class="produto_nomes">Quantidade:</a> <%= pro_ve.quantidade %></p>
+            <p><a class="produto_nomes">descricao:</a><br> 
+               <a style="font-size: 20px;"><%= pro_ve.descricao %></a>
+            </p>
+            <form class="form_editar" action="/editar/produto/<%= pro_ve.id %>" method="post">
+                <button class="form_butao" type="submit">Editar</button>
+            </form>
+        </div>
+    <% }) %>
+<% } else { %>
+    <p>Nenhum produto encontrado.</p>
+<% } %>
+
+        
+    </div>
+    <br><br><br>
+
+ <footer class="footer">
+     <footer style="text-align:center; padding:20px; background:#222; color:white;">
+  <p>Siga-nos:</p>
+  
+ 
+   <div class="contatos">
+  <a  target="_blank">
+    <img class="afoto" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" 
+         alt="Facebook" style="color: white;" width="70" height="70">
+  </a>
+
+ 
+  <a  target="_blank">
+    <img class="afoto" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" 
+         alt="Instagram" style="color: white;" width="70" height="70">
+  </a>
+
+  
+  <a target="_blank">
+    <img class="afoto" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" 
+         alt="Twitter" style="color: white;" width="70" height="70">
+  </a>
+  </div>
+</footer>
+
+</footer>
+    <script>
+
+        const tela_produto = document.getElementById("tela_produto");
+const produto_do_vendedor = document.getElementById("produto_do_vendedor");
+
+const butao_meus_produtos = document.getElementById("butao_meus_produtos");
+const butao_tela_produtos = document.getElementById("butao_tela_produtos");
+
+
+const meus_pro = document.getElementById("meus_pro")
+const id_produtos = document.getElementById("h1_nom_pro")
+
+
+butao_meus_produtos.addEventListener("click",()=>{
+    tela_produto.style.display = "none"
+    produto_do_vendedor.style.display = "flex"
+    produto_do_vendedor.style.flexWrap = "wrap"
+    meus_pro.style.display = "flex"
+     id_produtos.style.display = "none"
+}) 
+butao_tela_produtos.addEventListener("click",()=>{
+    meus_pro.style.display = "none"
+    id_produtos.style.display = "block"
+    tela_produto.style.display = "flex"
+    produto_do_vendedor.style.display = "none"
+
+})
+
+
+
+    </script>
+    
+</body>
+</html>

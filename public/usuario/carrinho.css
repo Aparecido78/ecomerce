@@ -1,0 +1,132 @@
+.carrinho{
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    
+   
+}
+#carrinho_cliente{
+    display: none;
+}
+#nome_carrinho{
+    margin-left: 35%;
+    color: black;
+    text-shadow: 0 0 50px black;
+    display: none;
+}
+#historico{
+    overflow: auto;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+    display: none;
+    height: 700px;
+    width: 100%;
+   
+   
+}
+.produto_historico_div{
+    width: 100%;
+    display: flex;
+    margin: 20px;
+    text-align: center;
+   
+
+}
+.produtos_historico{
+    margin: 10px;
+    flex-direction: column;
+    display: block;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 25%;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px;
+    box-shadow: 0 0 20px black;
+    border-radius: 10px;
+}
+
+
+.descricao{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 300px;
+   
+     word-wrap: break-word;  
+    overflow-wrap: break-word;
+    word-break: break-word;  
+
+}
+.form_opiniao{
+    position: relative;
+   
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+     position: relative;
+    right: 30%;
+}
+
+.frete{
+    position: relative;
+    color: green;
+    top: -10px;
+    font-size: 18px;
+}
+.contatos{
+    display: flex;
+    margin-left: 43%;
+    position: relative;
+    bottom: 155px;
+   
+}
+.contatos a img{
+     font-size: 30px;
+
+}
+.afoto{
+    font-size: 30px;
+    color: white;
+}
+.butao_comprar_produto{
+    width: 140%;
+    background: green;
+    color: white;
+    font-size: 15px;
+}
+.butao_cancelar_produto{
+     width: 140%;
+    background: red;
+    color: white;
+    font-size: 15px;
+
+}
+
+.perfil_form{
+    width: 20%;
+    height: 300px;
+    border: solid 2px black;
+
+}
+#perfil{
+    display: none;
+}
+
+.footer_contatos{
+   
+    position: static;
+    bottom: 0px;
+
+    height: 200px;
+    overflow: hidden;
+
+   
+}
+.footer_contatos a{
+    position: relative;
+   bottom: 80%;
+} 
