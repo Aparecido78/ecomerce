@@ -8,11 +8,11 @@ const Historico = connectar.define("Historico",{
         allowNull: false
     }
 })
-// Um usuário tem vários históricos
+
 Usuario.hasMany(Historico)
 Historico.belongsTo(Usuario)
 
-// Um produto pode estar em vários históricos
+
 Produtos.hasMany(Historico)
 Historico.belongsTo(Produtos)
 
