@@ -56,29 +56,29 @@
 <% } %>
   
   
-    <div id="tela_produto" class="tela_produto">
+   <div id="tela_produto" class="tela_produto">
+    <% if (produtos && produtos.length > 0) { %>
+        <% produtos.forEach(pro => { %>
+            <div id="produtos" class="produtos">
+                <br>
+                <img style="height: 100px;" width="30%" 
+                     src="/image/<%= pro.foto ? pro.foto : 'sem-foto.png' %>">
                 
-            <%  produtos.forEach(pro=>{ %>
+                <p>Nome: <%= pro.nome %></p>
+                <p>R$: <%= pro.preco %></p>
+                <p class="sem_juros">10x sem juros</p>
+                <p class="frete">frete grátis</p>
                 
-                <div id="produtos" class="produtos">
-                    <br>
-                
-                    <img style="height: 100px;" width="30%" src="/image/<%= pro.foto  %>">
-                    <p>Nome: <%= pro.nome %> </p>
-                    <p>R$: <%= pro.preco %> </p>
-                    <p class="sem_juros">10x sem juros</p>
-                    <p class="frete">frete gratis</p>
-                  
-                    <form action="/adicionar/carrinho/<%= pro.id %>" method="post">
-                       
-                        <button type="submit" class="carrinho_butao">adicionar carrinho</button>
+                <form action="/adicionar/carrinho/<%= pro.id %>" method="post">
+                    <button type="submit" class="carrinho_butao">adicionar carrinho</button>
+                </form>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <p>⚠️ Nenhum produto encontrado</p>
+    <% } %>
+</div>
 
-                    </form>
-               
-                </div>
-             
-             
-            <% })  %>
        
     </div>
      <h1 id="nome_carrinho">Carrinho de Produtos</h1>
@@ -110,34 +110,33 @@
 
         
     </div>
-    <div id="historico">
-        <div class="nome_historico">
+   <div id="historico">
+    <div class="nome_historico">
         <h1>Historico</h1>
-        </div>
-        
-        <div class="produto_historico_div">
-            <% if(historico) { %>
-        <% historico.forEach(hit=>{  %>
-             <div class="produtos_historico">
-                <br>
-                 <img style="height: 100px;" width="30%" src="/image/<%= hit.Produto.foto  %>">
-                    <p>Nome: <%= hit.Produto.nome %> </p>
-                    <p>descricao: <br> <%= hit.Produto.descricao %> </p>
+    </div>
+    
+    <div class="produto_historico_div">
+        <% if (historico && historico.length > 0) { %>
+            <% historico.forEach(hit => { %>
+                <div class="produtos_historico">
                     <br>
-                   
-            </div>
-
-        
-            
-           
-        <% })  %>
-
+                    <% if (hit.Produto) { %>
+                        <img style="height: 100px;" width="30%" 
+                             src="/image/<%= hit.Produto.foto ? hit.Produto.foto : 'sem-foto.png' %>">
+                        <p>Nome: <%= hit.Produto.nome ? hit.Produto.nome : 'Produto sem nome' %></p>
+                        <p>Descrição: <br> <%= hit.Produto.descricao ? hit.Produto.descricao : 'Descrição indisponível' %></p>
+                        <br>
+                    <% } else { %>
+                        <p>⚠️ Produto não encontrado (foi excluído)</p>
+                    <% } %>
+                </div>
+            <% }) %>
         <% } else { %>
-
-            <p> historico vasio</p>
-
+            <p>⚠️ Histórico vazio</p>
         <% } %>
-        </div>
+    </div>
+</div>
+
         
 
 
